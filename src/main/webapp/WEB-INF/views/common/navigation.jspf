@@ -1,0 +1,8 @@
+<nav role="navigation" class="navbar navbar-default">
+
+	<div class="">
+		<a href="/login" class="navbar-brand">Welcome Page</a>
+	</div>
+
+
+</nav>
