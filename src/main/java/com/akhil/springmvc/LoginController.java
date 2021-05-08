@@ -1,5 +1,7 @@
 package com.akhil.springmvc;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -23,6 +25,17 @@ public class LoginController {
 		return "login";
 	}
 	
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public String showRegistrationPage() {
+		return "register";
+	}
+	
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public String showLoginAfterRegistration(@RequestParam String name, @RequestParam String password) {
+		UserValidationService.register(name, password);
+		return "login";
+	}
+	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String HandleLoginRequest(@RequestParam String name, @RequestParam String password, ModelMap model) {
 		
@@ -34,4 +47,8 @@ public class LoginController {
 		model.put("name", name);
 		return "welcome";
 	}
+	
+	
+	
+	
 }

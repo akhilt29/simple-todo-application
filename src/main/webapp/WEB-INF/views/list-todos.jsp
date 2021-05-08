@@ -12,14 +12,20 @@
 </head>
 <body>
 
-Hi ${name} </BR>
+<div align="right">
+	<a class="button" href="/login" method = "GET">Logout</a>
+</div>
+
+<h1>Welcome, ${name}!</h1> </BR>
 	</div class = "container">
 	<table class = "table table-striped">
-		<caption>Your Todos are</caption>
+		<p>Please find your Todos below:</p>
 		
 		<thead>
 			<tr>
-				<th>Description</th>
+				<th>Todo</th>
+				<th>Details</th>
+				<th>Start Date</th>
 				<th>Target Date</th>
 				<th>Is Completed?</th>
 				<th></th>
@@ -31,6 +37,8 @@ Hi ${name} </BR>
 			<c:forEach items = "${todos}" var = "todo">
 				<tr>
 					<td>${todo.description}</td>
+					<td>${todo.details}</td>
+					<td><fmt:formatDate pattern="dd/MM/yyyy" value="${todo.startDate}" /></td>
 					<td><fmt:formatDate pattern="dd/MM/yyyy" value="${todo.targetDate}" /></td>
 					<td>${todo.done}</td>
 					<td><a type="button" class="btn btn-danger" href = "/delete-todo?id=${todo.id}">Delete</a></td>
@@ -41,7 +49,7 @@ Hi ${name} </BR>
 	</table>
 
 	<div>
-		<a class="button btn-success" href="/add-todos" method = "GET">Add</a>
+		<a class="button btn-success btn-lg" style="height:50px;width:100px"" href="/add-todos" method = "GET">Add</a>
 	</div>
 	
 	</div>

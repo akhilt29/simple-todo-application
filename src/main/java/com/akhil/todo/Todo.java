@@ -7,15 +7,19 @@ public class Todo {
 	private int id;
 	private String name;
 	private String description;
+	private String details;
+	private Date startDate;
 	private Date targetDate;
 	private boolean isDone;
 	
 	
-	public Todo(int id, String name, String description, Date targetDate, boolean isDone) {
+	public Todo(int id, String name, String description, String details, Date startDate, Date targetDate, boolean isDone) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
+		this.details = details;
+		this.startDate = startDate;
 		this.targetDate = targetDate;
 		this.isDone = isDone;
 	}
@@ -23,7 +27,7 @@ public class Todo {
 	
 	@Override
 	public String toString() {
-		return "Todo [id=" + id + ", name=" + name + ", description=" + description + ", targetDate=" + targetDate
+		return "Todo [id=" + id + ", name=" + name + ", description=" + description + ", startDate=\" + startDate, targetDate=" + targetDate
 				+ ", isDone=" + isDone + "]";
 	}
 
@@ -81,6 +85,26 @@ public class Todo {
 	}
 	public void setDone(boolean isDone) {
 		this.isDone = isDone;
+	}
+
+
+	public Date getStartDate() {
+		return startDate;
+	}
+
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+
+	public String getDetails() {
+		return details;
+	}
+
+
+	public void setDetails(String details) {
+		this.details = details;
 	}
 	
 	

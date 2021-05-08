@@ -15,13 +15,13 @@ public class TodoService {
 	private static int todoCount = 3;
 	
 	static{
-		todos.add(new Todo(1, "Anvesh", "Buy Groceries", new Date(121, 10, 11), false));
-		todos.add(new Todo(2, "Anvesh", "Study Java", new Date(121, 06, 11), false));
-		todos.add(new Todo(3, "Anvesh", "Learn Spring", new Date(121, 07, 13), false));
+		todos.add(new Todo(1, "Anvesh", "Buy Groceries", "Brinjal, Cabbage", new Date(121, 03, 21), new Date(121, 10, 11), false));
+		todos.add(new Todo(2, "Anvesh", "Study Java", "Finish SCJP 6 book", new Date(121, 04, 25), new Date(121, 06, 11), false));
+		todos.add(new Todo(3, "Anvesh", "Running", "Run at least for 20 minutes", new Date(121, 05, 01), new Date(121, 07, 13), false));
 	}
 	
-	public void addTodo(String name, String desc, Date date, boolean isDone) {
-		Todo todo = new Todo(++todoCount, name, desc, date, isDone);
+	public void addTodo(String name, String desc, String details, Date startDate, Date endDate, boolean isDone) {
+		Todo todo = new Todo(++todoCount, name, desc, details, startDate, endDate, isDone);
 		todos.add(todo);
 	}
 	
@@ -45,6 +45,9 @@ public class TodoService {
 			if(todo.getName().equals(name)) {
 				filteredTodos.add(todo);
 			}
+		}
+		for(Todo todo1: todos) {
+			System.out.println(todo1);
 		}
 		return filteredTodos;
 	}

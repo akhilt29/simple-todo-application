@@ -9,12 +9,17 @@
 </head>
 <body>
 <div class = "container">
+<div align="right">
+	<a class="button" href="/login" method = "GET">Logout</a>
+</div>
 <H1>Add a Todo</H1>
 
 <form action = "/add-todos" method = "POST">
 	
 	<div>Todo: <input name = "desc" type = "text" /> </div></BR> 
-	<div>Date: <input name = "tdate" type = "date" /> </div></BR>
+	<div>Details: <input name = "details" type = "text" /> </div></BR> 
+	<div>Start Date: <input name = "sdate" type = "date" /> </div></BR>
+	<div>End Date: <input name = "tdate" type = "date" /> </div></BR>
 	<div><input type = "submit" /></div>
 	
 </form>

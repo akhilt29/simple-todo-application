@@ -7,6 +7,9 @@
 <title>Welcome</title>
 </head>
 <body>
+<div align="right">
+	<a class="button" href="/login" method = "GET">Logout</a>
+</div>
 	Welcome ${name} </BR>
 	You can manage your Todos <a href = "/list-todos">here.</a>
 </body>

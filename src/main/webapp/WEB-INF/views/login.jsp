@@ -10,10 +10,13 @@
 </head>
 <body>
 	<p><font color="red">${errorMessage}</font></p>
-	<form action = "login" method = "POST">
+	<h1 style="font-size:150%;">Please Enter Your Username And Password</h1>
+	<form action = "/login" method = "POST">
 		<div>Name: <input name = "name" type = "text" /> </div></BR> 
 		<div>Password: <input name = "password" type = "password" /> </div></BR>
 		<input type = "submit" />
 	</form>
+	
+	<div><a href="/register">Click here to register</a></div>
 </body>
 </html>
